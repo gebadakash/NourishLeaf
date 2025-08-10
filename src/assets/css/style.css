@@ -160,9 +160,20 @@
     border-bottom: 1px solid rgba(255, 255, 255, .1);
 }
 
+.NavTitle{
+
+    font-size: larger;
+}
+
 @media (min-width: 320px) and (max-width: 1280px) {
-  .tagline-hide {
-    display: none !important;
+  .NavTitle{
+        font-size: 13px;
+        font-weight: bolder;
+        font-family: 'system-ui';
+  }
+
+  .NavSubTitle{
+    font-size: x-small;
   }
 }
 
@@ -547,5 +558,24 @@
 .footer .footer-item p.mb-4 {
     line-height: 35px;
 }
+
+.FooterTitle{
+
+    font-size: larger;
+
+}
+
+@media (min-width: 320px) and (max-width: 1280px) {
+
+.FooterTitle{
+
+font-size: large;
+
+}
+
+
+}
+
+
 /*** Footer End ***/
 

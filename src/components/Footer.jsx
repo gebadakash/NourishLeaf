@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="row g-4">
             <div className="col-lg-3">
               <a href="#">
-                <h1 className="text-primary mb-0">Nourish Leaf
+                <h1 className="text-primary mb-0 FooterTitle">MOHITE’S SALUBRIOUS FOOD 
 
 </h1>
                 <p className="text-secondary mb-0">Fuel your life with fresh greens</p>

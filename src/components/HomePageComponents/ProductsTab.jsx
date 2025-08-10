@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import { useCart } from '../../context/CartContext';
+
 
 const productsData = [
   {
@@ -39,10 +42,11 @@ const productsData = [
   }
 ];
 
-const categories = ["All Products", "Vegetables", "Fruits", "Bread", "Meat"];
+const categories = ["All Products", "All in One Box", "Mix Sprouts Box", "Chana Jor Box", "Fruit Box", "Fast Food"];
 
 const ProductsTab = () => {
   const [activeTab, setActiveTab] = useState("All Products");
+  const {addToCart} = useCart();
 
   const filteredProducts = activeTab === "All Products"
     ? productsData
@@ -54,7 +58,7 @@ const ProductsTab = () => {
         <div className="tab-class text-center">
           <div className="row">
             <div className="col-12">
-              <h1 className="text-center mb-4" style={{fontWeight:500}}>Our Organic Products</h1>
+              <h1 className="text-center mb-4" style={{fontWeight:500}}>Our Healthy & Snacks Products</h1>
               <div className="d-flex flex-wrap justify-content-center gap-3 mb-5">
                 {categories.map((category) => (
                   <button
@@ -105,12 +109,21 @@ const ProductsTab = () => {
                     </p>
                     <div className="d-flex justify-content-between flex-lg-wrap">
                       <p className="text-dark fs-5 fw-bold mb-0">{product.price}</p>
-                      <a
-                        href="#"
+                      <NavLink
+                        to="#"
+                        onClick={(e) => {
+            e.preventDefault();
+            addToCart({ // Pass product data to context
+              name: product.name,
+              image: product.image,
+              price: product.price,
+            });
+          }}
+                        
                         className="btn border border-secondary rounded-pill px-3 text-primary"
                       >
                         <i className="fa fa-shopping-bag me-2 text-primary"></i> Add to cart
-                      </a>
+                      </NavLink>
                     </div>
                   </div>
                 </div>

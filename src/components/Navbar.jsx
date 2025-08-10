@@ -1,14 +1,12 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
-  // Function to close the navbar collapse
   const closeNavbar = () => {
     const navbarCollapse = document.getElementById("navbarCollapse");
     if (navbarCollapse && navbarCollapse.classList.contains("show")) {
-      // Use Bootstrap's collapse API to hide it
       const bsCollapse = new window.bootstrap.Collapse(navbarCollapse, {
-        toggle: false
+        toggle: false,
       });
       bsCollapse.hide();
     }
@@ -34,13 +32,13 @@ const Navbar = () => {
             </small>
           </div>
           <div className="top-link pe-2">
-            <a to="#" className="text-white">
+            <a href="#" className="text-white">
               <small className="text-white mx-2">Privacy Policy</small>/
             </a>
-            <a to="#" className="text-white">
+            <a href="#" className="text-white">
               <small className="text-white mx-2">Terms of Use</small>/
             </a>
-            <a to="#" className="text-white">
+            <a href="#" className="text-white">
               <small className="text-white ms-2">Sales and Refunds</small>
             </a>
           </div>
@@ -51,23 +49,59 @@ const Navbar = () => {
       <div className="container px-0">
         <nav className="navbar navbar-light bg-white navbar-expand-xl">
           <NavLink to="/" className="navbar-brand" onClick={closeNavbar}>
-            <h1 className="text-primary display-6">Nourish Leaf</h1>
+            <h1 className="text-primary NavTitle">MOHITE’S SALUBRIOUS FOOD</h1>
             <h6
-              className="text-dark tagline-hide"
-              style={{ textAlign: "center", fontFamily: "cursive" }}
+              className="text-dark NavSubTitle"
+              style={{fontFamily: "cursive" }}
             >
-              {" "}
               Fuel your life with fresh greens
             </h6>
           </NavLink>
-          <button
-            className="navbar-toggler py-2 px-3"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarCollapse"
-          >
-            <span className="fa fa-bars text-primary"></span>
-          </button>
+
+          {/* Mobile / Tablet Icons + Toggler */}
+          <div className="d-xl-none d-flex align-items-center gap-3">
+            {/* Cart Icon */}
+            <NavLink
+              to="/cart"
+              className="position-relative my-auto"
+              onClick={closeNavbar}
+            >
+              <i className="fa fa-shopping-bag fa-lg"></i>
+              <span
+                className="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1"
+                style={{
+                  top: "-5px",
+                  left: "15px",
+                  height: "16px",
+                  minWidth: "16px",
+                  fontSize: "12px",
+                }}
+              >
+                3
+              </span>
+            </NavLink>
+
+            {/* User Icon */}
+            <NavLink
+              to="/account"
+              className="my-auto"
+              onClick={closeNavbar}
+            >
+              <i className="fas fa-user fa-lg"></i>
+            </NavLink>
+
+            {/* Toggler */}
+            <button
+              className="navbar-toggler py-2 px-3"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarCollapse"
+            >
+              <span className="fa fa-bars text-primary"></span>
+            </button>
+          </div>
+
+          {/* Navbar Links */}
           <div
             className="collapse navbar-collapse bg-white"
             id="navbarCollapse"
@@ -119,7 +153,9 @@ const Navbar = () => {
                 Contact
               </NavLink>
             </div>
-            <div className="d-flex m-3 me-0">
+
+            {/* Desktop Icons */}
+            <div className="d-none d-xl-flex m-3 me-0">
               <button
                 className="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4"
                 data-bs-toggle="modal"
@@ -127,8 +163,8 @@ const Navbar = () => {
               >
                 <i className="fas fa-search text-primary"></i>
               </button>
-              <NavLink 
-                to="/cart" 
+              <NavLink
+                to="/cart"
                 className="position-relative me-4 my-auto"
                 onClick={closeNavbar}
               >
@@ -145,11 +181,7 @@ const Navbar = () => {
                   3
                 </span>
               </NavLink>
-              <NavLink 
-                to="/account" 
-                className="my-auto"
-                onClick={closeNavbar}
-              >
+              <NavLink to="/account" className="my-auto" onClick={closeNavbar}>
                 <i className="fas fa-user fa-2x"></i>
               </NavLink>
             </div>

@@ -10,7 +10,7 @@ const HeroSection = () => {
           <div className="col-md-12 col-lg-7">
             <h4 className="mb-3 text-secondary">100% Organic Foods</h4>
             <h1 className="mb-5 display-4 text-primary">
-              Organic Veggies &amp; Fruits Foods
+              Healthy Living Starts with Fresh Organic Produce
             </h1>
             <div className="position-relative mx-auto">
               <input
