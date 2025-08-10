@@ -52,7 +52,7 @@ const Navbar = () => {
             <h1 className="text-primary NavTitle">MOHITE’S SALUBRIOUS FOOD</h1>
             <h6
               className="text-dark NavSubTitle"
-              style={{fontFamily: "cursive" }}
+              style={{ fontFamily: "cursive" }}
             >
               Fuel your life with fresh greens
             </h6>
@@ -60,7 +60,7 @@ const Navbar = () => {
 
           {/* Mobile / Tablet Icons + Toggler */}
           <div className="d-xl-none d-flex align-items-center gap-5">
-          <button
+            <button
               className="navbar-toggler py-2 px-3"
               type="button"
               data-bs-toggle="collapse"
@@ -90,16 +90,16 @@ const Navbar = () => {
             </NavLink>
 
             {/* User Icon */}
-            <NavLink
-              to="/account"
-              className="my-auto"
-              onClick={closeNavbar}
-            >
-              <i className="fas fa-user fa-2x"></i>
+            <NavLink to="/account" className="my-auto d-flex align-items-center gap-3" onClick={closeNavbar} >
+              <i className="fas fa-user fa-2x"></i>{" "}
+              <span className="text-dark" style={{fontFamily:"monospace"}}>
+                <small className="d-block">Hello, Sign in</small>
+                <strong>Account</strong>
+                <i className="fa-solid fa-lock ms-2"></i>
+              </span>
             </NavLink>
 
             {/* Toggler */}
-            
           </div>
 
           {/* Navbar Links */}
@@ -157,8 +157,7 @@ const Navbar = () => {
 
             {/* Desktop Icons */}
             <div className="d-none d-xl-flex m-3 me-0">
-            
-            <button
+              <button
                 className="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4"
                 data-bs-toggle="modal"
                 data-bs-target="#searchModal"
@@ -171,7 +170,7 @@ const Navbar = () => {
                 className="position-relative me-4 my-auto"
                 onClick={closeNavbar}
               >
-                <i className="fa fa-shopping-bag fa-2x" ></i>
+                <i className="fa fa-shopping-bag fa-2x"></i>
                 <span
                   className="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1"
                   style={{
