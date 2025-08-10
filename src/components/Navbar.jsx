@@ -59,7 +59,15 @@ const Navbar = () => {
           </NavLink>
 
           {/* Mobile / Tablet Icons + Toggler */}
-          <div className="d-xl-none d-flex align-items-center gap-4">
+          <div className="d-xl-none d-flex align-items-center gap-5">
+          <button
+              className="navbar-toggler py-2 px-3"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarCollapse"
+            >
+              <span className="fa fa-bars bs-gray-dark"></span>
+            </button>
             {/* Cart Icon */}
             <NavLink
               to="/cart"
@@ -91,14 +99,7 @@ const Navbar = () => {
             </NavLink>
 
             {/* Toggler */}
-            <button
-              className="navbar-toggler py-2 px-3"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarCollapse"
-            >
-              <span className="fa fa-bars bs-gray-dark"></span>
-            </button>
+            
           </div>
 
           {/* Navbar Links */}
